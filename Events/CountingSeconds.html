@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Count seconds visiting a web site</title>
+	
+	
+</head>
+<body onload="showTime();">
+ <h2>You have visited this web site for <span></span> seconds</h2>
+
+ <script type="text/javascript">
+ 	var count = 0;
+ 	var displaySeconds = document.getElementsByTagName('span')[0];
+ 	function updatedTime() {
+ 		count++;
+ 		displaySeconds.innerHTML = count;
+ 	}
+ 	function showTime() {
+ 		window.setInterval('updatedTime()', 1000);
+ 	}
+</script>
+</body>
+</html>

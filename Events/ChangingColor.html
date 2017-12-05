@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Changing Background Color</title>
+	<script type="text/javascript">
+		function setBgColor() {
+			var color = window.prompt('Enter color: ');
+			document.body.style.background = color;
+			
+		}
+
+		function changeColor(color) {
+			document.body.style.background = color;
+		}
+	</script>
+</head>
+<body onload="setBgColor();">
+	<select onchange="changeColor(this.value)">
+		<option value="red">Red</option>
+		<option value="blue">Blue</option>
+		<option value="yellow">Yellow</option>
+	</select>
+</body>
+</html>

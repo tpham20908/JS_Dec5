@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Growing and Shrinking text</title>
+	<script type="text/javascript">
+		var grow = document.getElementsByTagName('button')[0];
+		var shrink = document.getElementsByTagName('button')[1];
+		var text = document.getElementsByTagName('p')[0];
+		var size = 18;
+		var timer;
+		// var changeColor;
+
+		function growText() {
+			var text = document.getElementsByTagName('p')[0];
+			if (size < 100) {
+				size++;
+				text.style.fontSize = size + 'px';
+				timer = setTimeout('growText()', 10)
+			}
+		}
+
+		function shrinkText() {
+			var text = document.getElementsByTagName('p')[0];
+			if (size > 18) {
+				size--;
+				text.style.fontSize = size + 'px';
+				timer = setTimeout('shrinkText()', 10)
+			}
+		}
+
+		function switchesClass() {
+			var text = document.getElementsByTagName('p')[0];
+			text.classList.add('red');
+			if (text.classList.contains('red')) {
+				text.classList.remove('red');
+				text.classList.add('blue');
+			}
+			else {
+				text.classList.remove('blue');
+				text.classList.add('red');
+			}
+			// setTimeout('switchesClass()', 10);
+		}
+
+	</script>
+	<style type="text/css">
+		.red {
+			color: red;
+			font-size: 1.5em;
+		}
+		.blue {
+			color: blue;
+			font-size: 1.5em;
+		}
+	</style>
+</head>
+<body onload="setInterval('switchesClass', 100);">
+	<button onclick="growText();">Grow</button><br/><br/>
+	<button onclick="shrinkText();">Shrink</button>
+	<p>This text will change its style.</p>
+</body>
+</html>
